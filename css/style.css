@@ -97,6 +97,7 @@ color: var(--title-text-color);
 letter-spacing: 0.02em;
 font-weight: 500;
 line-height: 1.14;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .site-nav-link:hover,
 .site-nav-link:focus {
@@ -118,8 +119,10 @@ line-height: 1.14;
     left: 0;
     bottom: 0;
     position: absolute;
-    
-    
+    transition: opacity 250ms; 
+}
+.current:hover::after{
+    opacity: 1;
 }
 
 
@@ -142,6 +145,7 @@ line-height: 1.14;
 .icon-envelope, .icon-vector{
     margin-right: 10px;
     fill: currentColor;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
 }
  .icon-envelope:hover,
@@ -162,7 +166,7 @@ line-height: 1.14;
     font-weight: 500;
     line-height: 1.14;
     letter-spacing: 0.02em;
-  
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-nav-title:hover,
@@ -217,41 +221,52 @@ line-height: 1.14;
         padding-right: 32px;
         padding-bottom: 10px;
         border-radius: 4px;
+        transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
     .hero-button-main:hover,
     .hero-button-main:focus{
     color:var(--primary-bg-color) ;
     background-color: #188ce8; 
     } 
-    .backdrop.is-hidden{
+    .backdrop{
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        background-color: rgba(0, 0, 0, 0.2); 
+        opacity: 1;
         pointer-events: none;
-        
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .backdrop.is-hidden{
+        opacity: 0;
+        pointer-events: none;
+    }
+    .backdrop.is-hidden .modal{
+        transform: translate(-50%, -50%) scale(0.9);
     }
     .modal{
         position: absolute;
-        height: 581px;
-        width: 528px;
+        top: 50%;
+        left: 50%;
+        min-height: 581px;
+        min-width: 528px;
         opacity: 1;
-        position: absolute;
-        transform: translate(-50%, -50%), scale(1);
+        transform: translate(-50%, -50%) scale(1);
         background-color: var(--primary-bg-color);
-        transition: transform 250ms cubic-bezier(0.4 0, 0.2 1);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
         border-radius: 4px;
-        top: 50px;
-        left: 50px;
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     }
-    .icon-close{
+    .button-close{
        position: absolute;
         width: 30px;
         height: 30px;
         top: 8px;
         right: 8px;
+        display: flex;
+        align-items: center;
         border-radius: 50%;
         background-color: var(--primary-bg-color);
         border: 1px solid rgba(0, 0, 0, 0.1);
@@ -405,6 +420,7 @@ line-height: 1.14;
     height: 44px;
    border-radius: 50%;
    text-align: center; 
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 } 
 
 .connect-network-link{
@@ -416,10 +432,11 @@ line-height: 1.14;
    border-radius: 50%;
    padding: 10px;
    background-color: var(--primary-bg-color);
-   
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .network-icon{
     fill:#AFB1B8;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .network-link:hover,
 .network-link:focus{
@@ -450,12 +467,13 @@ line-height: 1.14;
     border-radius: 4px;
     width: 170px;
     height: 92px;
-   
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-icon{
     fill: #AFB1B8;
     justify-content: center;
     align-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-icon:hover{
     fill: var(--accent-color);
@@ -507,6 +525,7 @@ border-color: var(--accent-color);
     color: rgba(255, 255, 255, 0.6);
     line-height: 1.2;
     display: block;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .information-addres-list:hover,
 .information-addres-list:focus{
@@ -537,7 +556,8 @@ margin-bottom: 9px;
 }
 .network-icon-foot{
 
-    fill:var(--primary-bg-color); 
+    fill:var(--primary-bg-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .network-icon-foot:hover,
 .network-icon-foot:focus{
@@ -549,7 +569,8 @@ margin-bottom: 9px;
     align-items: center;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.1);
-    fill: var(--primary-bg-color)
+    fill: var(--primary-bg-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .connect-network:not(:last-child){
     margin-right: 10px;
@@ -594,6 +615,7 @@ margin-right: 8px;
     padding-top: 6px;
     padding-bottom: 6px;
     border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-button:hover,
@@ -613,6 +635,7 @@ margin-right: 8px;
     padding-bottom: 6px; 
     border-radius: 4px;
     cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button-main:hover,
 .filter-button-main:focus{
@@ -638,8 +661,8 @@ margin-right: 0;
 }
 .gallery-link{
    display: block;
-   position: relative;
-   overflow: hidden;
+   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .gallery-link:hover,
 .gallery-link:focus{
@@ -652,8 +675,8 @@ margin-right: 0;
 }
 .overlay{
     position: absolute;
-    width: 370px;
-    height: 294px;
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     padding: 63px 24px;
@@ -669,6 +692,7 @@ margin-right: 0;
     color: var(--primary-bg-color);
     background: rgba(33, 150, 243, 0.9);
 }
+
 .gallery-title{
     color: var(--title-text-color);
     font-weight: 700;
@@ -677,10 +701,17 @@ margin-right: 0;
     letter-spacing: 0.06em;
     margin-bottom: 4px;
 }
-.card{
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+.div-card{
     overflow: hidden;
+    position: relative;
+}
+.text{
+color: var(--primary-bg-color);
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 2;
+opacity: 0.5;
 }
 .gallery-text{
     color: var(--primary-text-color);
